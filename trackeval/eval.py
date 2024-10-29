@@ -73,6 +73,8 @@ class Evaluator:
             # Evaluate each tracker
             for tracker in tracker_list:
                 # if not config['BREAK_ON_ERROR'] then go to next tracker without breaking
+                if tracker == '.DS_Store':
+                    continue
                 try:
                     # Evaluate each sequence in parallel or in series.
                     # returns a nested dict (res), indexed like: res[seq][class][metric_name][sub_metric field]
